@@ -1,0 +1,147 @@
+VERSION "0.1"
+
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_: 
+BU_: 
+BO_ 1281 x501_Charger1: 8 Vector__XXX
+   SG_ bunch_of_status_bits_maybe : 0|64@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ charge_complete : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1282 x502_Charger2: 8 Vector__XXX
+   SG_ Charger_Output_Voltage : 0|16@1+ (0.1,0) [0|1] "V" Vector__XXX
+   SG_ Charger_Output_Current : 16|8@1+ (0.1,0) [0|1] "A" Vector__XXX
+
+BO_ 257 x101_BMS: 8 Vector__XXX
+   SG_ Battery_Current : 16|16@1- (0.1,0) [0|1] "" Vector__XXX
+   SG_ Battery_voltage : 0|16@1- (0.1,0) [0|1] "" Vector__XXX
+   SG_ Derating_max_current_allowed : 32|16@1+ (0.1,0) [0|1] "A" Vector__XXX
+
+BO_ 513 x201_BMS_Cell_and_Flags: 8 Vector__XXX
+   SG_ Ignition : 62|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ cell_voltage_max : 0|16@1+ (1,0) [0|1] "mV" Vector__XXX
+   SG_ cell_voltage_min : 16|16@1+ (1,0) [0|1] "mV" Vector__XXX
+   SG_ Charging : 59|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ cell_num_voltage_max_maybe : 32|8@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ cell_num_voltage_min_maybe : 40|8@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1025 x401_BMS_Energy: 8 Vector__XXX
+   SG_ SOC : 7|8@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ Battery_Wh_actual : 32|16@1+ (1,0) [0|1] "Wh" Vector__XXX
+   SG_ battery_temp_min_maybe : 16|8@1- (1,0) [0|1] "" Vector__XXX
+   SG_ battery_temp_max_maybe : 24|8@1- (1,0) [0|1] "" Vector__XXX
+   SG_ battery_temp_avg_maybe : 8|8@1- (1,0) [0|1] "" Vector__XXX
+
+BO_ 770 x302_Controller_Electrical: 8 Vector__XXX
+   SG_ some_controller_temperature_or_limit_maybe : 0|8@1- (1,0) [0|1] "" Vector__XXX
+   SG_ controller_voltage : 16|16@1- (0.1,0) [0|1] "V" Vector__XXX
+   SG_ controller_current : 32|16@1+ (0.1,0) [0|1] "A" Vector__XXX
+   SG_ some_controller_temperature_or_limit_maybe_2 : 8|8@1- (1,0) [0|100] "" Vector__XXX
+   SG_ drivemode_power_or_rpm_or_current_limit_probably : 48|16@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 8 x008_Controller_maybe: 8 Vector__XXX
+   SG_ Mux M : 1|2@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ mux0_torque_target_actual_maybe_1 m0 : 8|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux1_maybe_some_torque_request_or_throttlepos_1 m1 : 8|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux1_maybe_some_torque_request_or_throttlepos_1_almost_ident m1 : 24|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux1_power_or_torque_maybe m1 : 40|16@1- (0.001,0) [0|1] "" Vector__XXX
+   SG_ mux0_power_or_something_maybe m0 : 24|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux0_torque_target_actual_maybe_2 m0 : 40|16@1- (1,0) [0|1] "" Vector__XXX
+
+BO_ 9 x009_mux0: 8 Vector__XXX
+   SG_ mux0_torque_target_actual_maybe_1 : 8|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux0_power_or_something_maybe : 24|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux0_torque_target_actual_maybe_2 : 40|16@1- (1,0) [0|1] "" Vector__XXX
+
+BO_ 10 x00A_mux1: 8 Vector__XXX
+   SG_ mux1_maybe_some_torque_request_or_throttlepos_1 : 8|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux1_maybe_some_torque_request_or_throttlepos_1_almost_ident : 24|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux1_power_or_torque_maybe : 40|16@1- (0.001,0) [0|1] "" Vector__XXX
+
+BO_ 11 x00B_mux2: 8 Vector__XXX
+   SG_ mux2_unknown_1 : 8|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux2_unknown_2 : 24|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux2_unknown_3 : 40|16@1- (1,0) [0|1] "" Vector__XXX
+
+BO_ 12 x00C_mux3: 8 Vector__XXX
+   SG_ mux3_unknown_1 : 8|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux3_unknown_2 : 24|16@1- (1,0) [0|1] "" Vector__XXX
+   SG_ mux3_unknown_3 : 40|16@1- (1,0) [0|1] "" Vector__XXX
+
+BO_ 515 x203_Controller_Motor: 8 Vector__XXX
+   SG_ motor_rpm : 0|16@1+ (1,0) [0|1] "rpm" Vector__XXX
+   SG_ power_probably : 16|16@1- (0.001,0) [0|1] "kW" Vector__XXX
+
+BO_ 771 x303_Controller_Speed: 8 Vector__XXX
+   SG_ speed : 0|16@1- (0.1,0) [0|1] "" Vector__XXX
+   SG_ speed_avg : 16|16@1- (0.1,0) [0|1] "" Vector__XXX
+   SG_ speed_max : 32|16@1- (0.1,0) [0|1] "" Vector__XXX
+
+BO_ 1026 x402_Odo: 8 Vector__XXX
+   SG_ odometer_total : 16|32@1+ (1,0) [0|1] "km" Vector__XXX
+   SG_ odometer_trip : 48|16@1+ (0.1,0) [0|1] "km" Vector__XXX
+
+BO_ 1168 x490_VehicleState: 8 Vector__XXX
+   SG_ Drivemodes_probably : 3|3@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ some_flags_includes_lowbatt_apparently : 21|3@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ recuperation_level : 0|3@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 259 0x103_BMS_stats: 8 Vector__XXX
+   SG_ total_Ah_or_similar_maybe : 40|24@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ vehicle_state_enum : 8|8@1- (1,0) [0|1] "" Vector__XXX
+
+BO_ 514 x202_Controller_Throttle_and_Flags: 8 Vector__XXX
+   SG_ throttle_pos_maybe : 48|8@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ drivemode_maybe : 4|3@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ wait_flags_probably : 0|3@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ drivemode_power_or_rpm_or_current_limit_probably : 16|16@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ Vehicle_ready_maybe : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ Vehicle_has_been_ready_maybe : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ Tether_connected_maybe : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ Sidestand_deployed_maybe : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 769 x301_BMS_Limits_or_Flags: 8 Vector__XXX
+   SG_ shrouds_recuperation_spikes_on_low_soc_maybe : 40|8@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 15 Controller_flags_and_limits_maybe: 8 Vector__XXX
+   SG_ Power_interrupted_flags : 40|5@1+ (1,0) [0|1] "" Vector__XXX
+
+CM_ SG_ 770 drivemode_power_or_rpm_or_current_limit_probably "seems_identical_signal_in_0x202";
+CM_ SG_ 1168 Drivemodes_probably "seems_identical_to_the_drivemode_in_0x202";
+CM_ SG_ 259 total_Ah_or_similar_maybe "Counts_up_continuously,_probably_something_like_total_Ah,_mileage,_throttle_on_time_or_whatever";
+CM_ SG_ 514 drivemode_power_or_rpm_or_current_limit_probably "seems_identical_to_0x302_byte_6-7";
+CM_ BO_ 769 "Also exists during charge";
+VAL_ 1168 Drivemodes_probably 1 "Eco" 2 "Sport" 4 "Hyper" 3 "Reverse";
+VAL_ 259 vehicle_state_enum 25 "Full,_ignition_off" 24 "Over_80%,_recuperation_not_allowed" 60 "Enabling_recuperation" 59 "Over_80%,_recuperation_allowed" 58 "50_-_80%" 53 "50_-_30_%" 50 "below_30_%";
+VAL_ 514 drivemode_maybe 2 "Sport" 4 "Hyper" 1 "Evo?" 3 "Reverse";
+VAL_ 514 wait_flags_probably 1 "Ready" 3 "Brake_pressed?";
+VAL_ 15 Power_interrupted_flags 0 "Motor_Enabled?" 21 "(Front)_Brake_Pulled,_Motor_disabled?" 40 "Tether_pulled_maybe?" 6 "Sidestand_down_maybe?";
